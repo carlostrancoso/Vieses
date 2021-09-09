@@ -15,7 +15,7 @@ let yoff = 0.0;
 let yi = 0;
 
   //que eram duas mas com uma escala das centenas.
-let w = 75;
+let w = 100;
 
   // Em todas elas havia movimento. Quais são as personagens?
 let state = 0;
@@ -32,7 +32,7 @@ function preload() {
 
   //feito num rectangulo de 9 por 6, onde as peças não encaixam.
 function setup() {
-  createCanvas(450, 300);
+  createCanvas(600, 400);
   for (let i = 0; i < maxImages; i ++ ) {
     img[i].loadPixels();
     
@@ -76,7 +76,7 @@ function draw() {
     for (let x = 0; x <= width; x += 10) {
 
  // de ruído vertical.
-      let y = map(noise(xoff, yoff), 0, 5, 100, mouseY);
+      let y = map(noise(xoff, yoff), 0, 5, 200, mouseY);
 
       vertex(x, y);
 
@@ -168,7 +168,7 @@ function draw() {
         b = img[imageIndex].pixels[loc];
 
   // a busca cada vez mais imperceptível
-        let maxdist = 35;
+        let maxdist = 50;
         
   //que deixa um rasto okupado
         let d = dist(x, y, mouseX, mouseY);
