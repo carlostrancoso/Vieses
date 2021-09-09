@@ -76,7 +76,7 @@ function draw() {
     for (let x = 0; x <= width; x += 10) {
 
  // de ruído vertical.
-      let y = map(noise(xoff, yoff), 0, 5, 200, mouseY);
+      let y = map(noise(xoff, yoff), 0, 5, 100, mouseY);
 
       vertex(x, y);
 
