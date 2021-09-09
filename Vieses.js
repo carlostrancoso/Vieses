@@ -15,7 +15,7 @@ let yoff = 0.0;
 let yi = 0;
 
   //que eram duas mas com uma escala das centenas.
-let w = 100;
+let w = 75;
 
   // Em todas elas havia movimento. Quais são as personagens?
 let state = 0;
@@ -32,7 +32,7 @@ function preload() {
 
   //feito num rectangulo de 9 por 6, onde as peças não encaixam.
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(450, 300);
   for (let i = 0; i < maxImages; i ++ ) {
     img[i].loadPixels();
     
@@ -168,7 +168,7 @@ function draw() {
         b = img[imageIndex].pixels[loc];
 
   // a busca cada vez mais imperceptível
-        let maxdist = 50;
+        let maxdist = 35;
         
   //que deixa um rasto okupado
         let d = dist(x, y, mouseX, mouseY);
