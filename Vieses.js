@@ -217,7 +217,7 @@ function mouseReleased() {
   }
 
   //Deixaste o teu rasto. Guarda-o.
-  save('Vieses','png');
+  save('Vieses.png');
 }
 
   //Fora deste rectângulo há outras histórias.
