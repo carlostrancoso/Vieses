@@ -32,7 +32,7 @@ function preload() {
 
   //feito num rectangulo de 9 por 6, onde as peças não encaixam.
 function setup() {
-  cnv = createCanvas(600, 400);
+  createCanvas(600, 400);
   for (let i = 0; i < maxImages; i ++ ) {
     img[i].loadPixels();
     
@@ -217,7 +217,7 @@ function mouseReleased() {
   }
 
   //Deixaste o teu rasto. Guarda-o.
-  save(cnv, 'Vieses.png');
+  saveCanvas('Vieses.png');
 }
 
   //Fora deste rectângulo há outras histórias.
