@@ -5,7 +5,6 @@ let maxImages = 18;
 let imageIndex = 1;
 
   //nas suas diversas matrizes.
-
 const matrix = [ [ -1, -1, -1 ],
                  [ -1, 9, -1 ],
                  [ -1, -1, -1 ] ];
@@ -23,34 +22,30 @@ let state = 0;
   // É um jogo.
 let img = [];
 
+  //e varia às mãos de quem o joga.
 function preload() {
   for (let i = 0; i < maxImages; i ++ ) {
     img[i] = loadImage('data/bienal' + i + '.jpg' );
-    //e varia às mãos de quem o joga.
+
   }
 }
 
-  //feito num rectangulo de 9 por 6, onde as peças não encaixam.
+  //feito num rectângulo de 9 por 6, onde as peças não encaixam.
 function setup() {
   createCanvas(600, 400);
   for (let i = 0; i < maxImages; i ++ ) {
     img[i].loadPixels();
-    
-  //e varia às mãos de quem o joga.
-      noCursor();
+    noCursor();
   }
   
   //na caixa do tempo e do espaço.
-
   imageIndex = int(random(maxImages));
-
-  pixelDensity(1);
+  pixelDensity();
   frameRate(24);
 
 }
 
 function draw() {
-
   image(img[imageIndex], 0, 0);
   
   //Nunca um rio se banha em ti duas vezes
@@ -58,7 +53,6 @@ function draw() {
 
   //não se destingue do seu interior
     noStroke();
-
     yi++;
     if (yi > height) {
       yi = 0;
@@ -72,12 +66,10 @@ function draw() {
     
  // ressoando a tua forma
     let xoff = 0; 
-
     for (let x = 0; x <= width; x += 10) {
 
  // de ruído vertical.
       let y = map(noise(xoff, yoff), 0, 5, 200, mouseY);
-
       vertex(x, y);
 
  // Suas ondas de branda superfície
@@ -87,9 +79,7 @@ function draw() {
  // e corrente variável,
     yoff += 0.01;
     vertex(width, height);
-    vertex(0, height);
-    
- // e corrente variável,
+    vertex(0, height);    
     endShape(CLOSE);
   }
 
@@ -150,11 +140,10 @@ function draw() {
     tint(255);
   }
   
-  //Parabéns. Contribuiste para o devir e mais uma página foi virada na História. Ela atualiza-se.
+  //Parabéns. Contribuíste para o devir e mais uma página foi virada na História. Ela actualiza-se.
    if(state == 3){
     
-    //As dimensões e matriz do jogo sempre seguem
-    
+  //As dimensões e matriz do jogo sempre seguem    
     for (let x = 0; x < img[imageIndex].width; x++) {
         for (let y = 0; y < img[imageIndex].height; y++ ) {
 
@@ -243,6 +232,7 @@ function convolution(x, y, matrix, matrixsize, img) {
       rtotal += (img[imageIndex].pixels[loc]) * matrix[i][j];
       gtotal += (img[imageIndex].pixels[loc]) * matrix[i][j];
       btotal += (img[imageIndex].pixels[loc]) * matrix[i][j];
+      
  //a sua dobra traça ligações
     }
   }
