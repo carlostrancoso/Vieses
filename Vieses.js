@@ -40,7 +40,7 @@ function setup() {
   
   //na caixa do tempo e do espaço.
   imageIndex = int(random(maxImages));
-  pixelDensity();
+  pixelDensity(1);
   frameRate(24);
 
 }
